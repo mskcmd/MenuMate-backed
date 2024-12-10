@@ -14,14 +14,13 @@ const app = express();
 
 const allowedOrigin = process.env.ALLOWED_ORIGIN || "*";
 
-const corsOptions = {
-  origin: allowedOrigin,  
-  methods: "GET,POST", 
-  allowedHeaders: "Content-Type,Authorization",  
-  credentials: true,  
-};
+app.use(
+  cors({
+    origin: allowedOrigin,
+    credentials: true,
+  })
+);
 
-app.use(cors(corsOptions));  
 app.use(cookieParser());
 app.use(express.json());
 
