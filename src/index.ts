@@ -25,6 +25,9 @@ app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the Menu Card API');
+});
 
 app.use(MenuRoute)
 app.use(errorHandler)
