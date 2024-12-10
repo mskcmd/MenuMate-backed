@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const dbURI: string = process.env.DB_URI || '';
+const dbURI: string = process.env.DB_URI || 'mongodb://localhost:27017/Menu_card';
 
 export async function connectedDB(): Promise<void> {
     try {
